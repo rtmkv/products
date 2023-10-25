@@ -2,7 +2,7 @@ package org.example.product.base;
 
 import java.math.BigDecimal;
 
-public interface Debt {
+public interface InterestRateInterface {
 
-  BigDecimal getDebt();
+  BigDecimal getRate();
 }

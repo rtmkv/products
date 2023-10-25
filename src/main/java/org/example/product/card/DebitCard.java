@@ -6,7 +6,7 @@ import org.example.product.base.Currency;
 public class DebitCard extends Card {
 
   @Override
-  public BigDecimal writeOff(BigDecimal amount) {
+  public BigDecimal withdrawMoney(BigDecimal amount) {
     if (balance.compareTo(amount) < 0) {
       throw new IllegalArgumentException("Write off amount must not exceed the balance.");
     }

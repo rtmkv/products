@@ -1,9 +1,9 @@
 package org.example.product.deposit;
 
 import java.math.BigDecimal;
-import org.example.product.base.Replenishable;
+import org.example.product.base.ReplenishmentInterface;
 
-public class ReplenishableDeposit extends Deposit implements Replenishable {
+public class ReplenishableDeposit extends Deposit implements ReplenishmentInterface {
 
   @Override
   public BigDecimal replenish(BigDecimal amount) {

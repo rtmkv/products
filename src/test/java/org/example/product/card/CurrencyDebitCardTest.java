@@ -21,7 +21,7 @@ public class CurrencyDebitCardTest {
   @Test
   public void testWriteOffFromCardPositiveResultingBalance() {
     CurrencyDebitCard card = new CurrencyDebitCard("Debit card", valueOf(50), Currency.EUR);
-    card.writeOff(valueOf(35));
+    card.withdrawMoney(valueOf(35));
 
     assertEquals(valueOf(15), card.getBalance());
   }
@@ -29,6 +29,6 @@ public class CurrencyDebitCardTest {
   @Test
   public void testWriteOffFromCardNegativeResultingBalance() {
     CurrencyDebitCard card = new CurrencyDebitCard("Debit card", valueOf(50), Currency.EUR);
-    assertThrows(IllegalArgumentException.class, () -> card.writeOff(valueOf(100)));
+    assertThrows(IllegalArgumentException.class, () -> card.withdrawMoney(valueOf(100)));
   }
 }

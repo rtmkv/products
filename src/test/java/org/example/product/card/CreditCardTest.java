@@ -19,14 +19,14 @@ public class CreditCardTest {
   @Test
   public void testWriteOffFromCardPositiveResultingBalance() {
     CreditCard card = new CreditCard("Debit card", valueOf(50));
-    card.writeOff(valueOf(35));
+    card.withdrawMoney(valueOf(35));
     assertEquals(valueOf(15), card.getBalance());
   }
 
   @Test
   public void testWriteOffFromCardNegativeResultingBalance() {
     CreditCard card = new CreditCard("Debit card", valueOf(50));
-    card.writeOff(valueOf(75));
+    card.withdrawMoney(valueOf(75));
     assertEquals(valueOf(-25), card.getBalance());
   }
 

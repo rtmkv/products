@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import org.example.product.base.AbstractProduct;
 import org.example.product.base.Closeable;
 import org.example.product.base.Currency;
-import org.example.product.base.GetBalanceInterface;
+import org.example.product.base.BalanceInterface;
 
-public abstract class Deposit extends AbstractProduct implements GetBalanceInterface, Closeable {
+public abstract class Deposit extends AbstractProduct implements BalanceInterface, Closeable {
 
   private boolean closed = false;
 

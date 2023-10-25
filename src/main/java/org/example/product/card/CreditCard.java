@@ -1,15 +1,15 @@
 package org.example.product.card;
 
 import java.math.BigDecimal;
-import org.example.product.base.Debt;
-import org.example.product.base.Rate;
+import org.example.product.base.DebtInterface;
+import org.example.product.base.InterestRateInterface;
 
-public class CreditCard extends Card implements Debt, Rate {
+public class CreditCard extends Card implements DebtInterface, InterestRateInterface {
 
   private final BigDecimal interestRate;
 
   @Override
-  public BigDecimal writeOff(BigDecimal amount) {
+  public BigDecimal withdrawMoney(BigDecimal amount) {
     return balance = balance.subtract(amount);
   }
 

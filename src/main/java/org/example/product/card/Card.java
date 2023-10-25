@@ -3,11 +3,11 @@ package org.example.product.card;
 import java.math.BigDecimal;
 import org.example.product.base.AbstractProduct;
 import org.example.product.base.Currency;
-import org.example.product.base.GetBalanceInterface;
-import org.example.product.base.Replenishable;
-import org.example.product.base.WriteOffInterface;
+import org.example.product.base.BalanceInterface;
+import org.example.product.base.ReplenishmentInterface;
+import org.example.product.base.WithdrawInterface;
 
-public abstract class Card extends AbstractProduct implements Replenishable, WriteOffInterface, GetBalanceInterface {
+public abstract class Card extends AbstractProduct implements ReplenishmentInterface, WithdrawInterface, BalanceInterface {
 
   @Override
   public BigDecimal replenish(BigDecimal amount) {
@@ -19,7 +19,7 @@ public abstract class Card extends AbstractProduct implements Replenishable, Wri
     return balance;
   }
 
-  public abstract BigDecimal writeOff(BigDecimal amount);
+  public abstract BigDecimal withdrawMoney(BigDecimal amount);
 
   public Card(String name, BigDecimal balance) {
     super(name, balance, Currency.getDefault());
